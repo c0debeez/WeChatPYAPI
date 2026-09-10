@@ -126,11 +126,21 @@ def main():
 
             # 别人发送的消息
             else:
-                if msg["msg_type"] == 490:
+                if msg["msg_type"] == 37:
+                    # 同意添加好友申请
+                    w.agree_friend(msg_data=msg)
+
+                # 转账消息
+                elif msg["msg_type"] == 490:
                     is_recv = msg["detail"]["is_recv"]
                     if is_recv:
                         # 收款
                         w.collection(msg_data=msg)
+
+        # 撤回消息
+        # 注意：撤回消息中的参数，跟正常消息的参数不一致，可自行判断type是否是666，分别放到不同的队列中处理
+        elif msg["type"] == 666:
+            print("{} 撤回消息：{}".format(msg["wx_id"], msg["content"]))
 
 
 if __name__ == '__main__':
