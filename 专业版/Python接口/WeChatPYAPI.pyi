@@ -197,3 +197,9 @@ class WeChatPYApi:
 
     def un_follow_mp(self, mp_id) -> Any:
         ...
+
+    def sns_decrypt_video(self, key, input_path, out_path) -> Any:
+        ...
+
+    def sns_decrypt_img(self, key, input_path, out_path) -> Any:
+        ...

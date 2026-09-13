@@ -417,6 +417,20 @@ class WeChatPYApi(builtins.object)
  |      显示微信窗口
  |      :return: 无
  |  
+ |  sns_decrypt_img(self, key, input_path, out_path)
+ |      解密朋友圈图片
+ |      :param key: key
+ |      :param input_path: 文件路径【解密前】
+ |      :param out_path: 输出路径【解密后】
+ |      :return: True:成功 False:失败
+ |  
+ |  sns_decrypt_video(self, key, input_path, out_path)
+ |      解密朋友圈视频
+ |      :param key: key
+ |      :param input_path: 文件路径【解密前】
+ |      :param out_path: 输出路径【解密后】
+ |      :return: True:成功 False:失败
+ |  
  |  start_wx(self, path=None)
  |      启动微信，目前支持微信版本：V-4.1.12.26
  |      :param path: 保存登录二维码的绝对路径
